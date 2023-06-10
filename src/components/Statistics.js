@@ -1,4 +1,4 @@
-export const Statistics = ({children, data}) => {
+export const Statistics = ({children}) => {
     return (
         <section class="statistics">
           <h2 class="title">Upload stats</h2>
