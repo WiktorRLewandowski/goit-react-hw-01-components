@@ -24,27 +24,30 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       stats={user.stats}
     />
     <Statistics>
-    {data.map(data => {
-                return ( 
-                  <li class="item" key={data.id}>
-                    <span class="label">{data.label}</span>
-                    <span class="percentage">{data.percentage}</span>
-                  </li>
-                )
-              }
-    )}
+    {
+      data.map(({id, label, percentage}) => {
+        return ( 
+          <li class="item" key={id}>
+            <span class="label">{label}</span>
+            <span class="percentage">{percentage}</span>
+          </li>
+        )
+      })
+    }
     </Statistics>
     <FriendList>
-    {friends.map(({avatar, name, id, isOnline}) => {
-      return (
-        <FriendListItem
-          avatar={avatar}
-          name={name}
-          isOnline={isOnline}
-          key={id}
-        />
-      )
-      })}
+    {
+      friends.map(({avatar, name, id, isOnline}) => {
+        return (
+          <FriendListItem
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+            key={id}
+          />
+        )
+      })
+    }
     </FriendList>
   </React.StrictMode>
 );
