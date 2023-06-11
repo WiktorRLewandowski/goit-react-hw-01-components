@@ -1,9 +1,9 @@
 export const Statistics = ({children}) => {
     return (
-        <section class="statistics">
-          <h2 class="title">Upload stats</h2>
+        <section className="statistics">
+          <h2 className="title">Upload stats</h2>
 
-          <ul class="stat-list">
+          <ul className="stat-list">
             {children}
           </ul>
         </section>
