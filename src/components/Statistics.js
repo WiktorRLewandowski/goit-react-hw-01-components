@@ -1,3 +1,5 @@
+import  PropTypes  from "prop-types";
+
 export const Statistics = ({children}) => {
     return (
         <section className="statistics">
@@ -8,5 +10,13 @@ export const Statistics = ({children}) => {
           </ul>
         </section>
     )
+}
 
+Statistics.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string,
+    percentage: PropTypes.number,
+    })
+  )
 }

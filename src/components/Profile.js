@@ -1,4 +1,4 @@
-// import { PropTypes } from "prop-types";
+import  PropTypes  from "prop-types";
 
 export const Profile = ({avatar, username, tag, location, stats}) => {
     return (
@@ -6,7 +6,7 @@ export const Profile = ({avatar, username, tag, location, stats}) => {
             <div className="description">
                 <img
                   src={avatar}
-                  alt={username}
+                  alt={`${username}'s avatar`}
                   className="avatar"
                 />
                 <p className="name">{username}</p>
@@ -30,4 +30,12 @@ export const Profile = ({avatar, username, tag, location, stats}) => {
             </ul>
         </div>
     )
+}
+
+Profile.propTypes = {
+  avatar: PropTypes.string, 
+  username: PropTypes.string, 
+  tag: PropTypes.string, 
+  location: PropTypes.string, 
+  stats: PropTypes.objectOf(PropTypes.number),
 }

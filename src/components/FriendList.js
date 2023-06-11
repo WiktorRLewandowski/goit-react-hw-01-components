@@ -1,3 +1,5 @@
+import { PropTypes } from "prop-types";
+
 export const FriendList = ({children}) => {
     return (
         <section>
@@ -6,4 +8,8 @@ export const FriendList = ({children}) => {
             </ul>
         </section>
     )
+}
+
+FriendList.propType = {
+    children: PropTypes.element
 }
