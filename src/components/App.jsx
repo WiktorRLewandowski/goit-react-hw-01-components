@@ -4,10 +4,13 @@ import { FriendList } from './FriendList';
 import { FriendListItem } from './FriendListItem';
 import { TransactionHistory } from './TransactionHistory';
 
-import user from '../datasets/user.json';
-import data from '../datasets/data.json';
-import friends from '../datasets/friends.json';
-import transactions from '../datasets/transactions.json'
+import user from '../datasets/user';
+import data from '../datasets/data';
+import friends from '../datasets/friends';
+import transactions from '../datasets/transactions'
+
+import css from '../css/Statistics.module.css'
+import { getRandomColor } from 'utils/getColor';
 
 export const App = () => {
   return (
@@ -21,6 +24,7 @@ export const App = () => {
         fontSize: 40,
         color: '#010101',
       }}
+      className={css.body}
     >
     <Profile  
       username={user.username}
@@ -33,9 +37,9 @@ export const App = () => {
     {
       data.map(({id, label, percentage}) => {
         return ( 
-          <li className="item" key={id}>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}</span>
+          <li style={{backgroundColor: getRandomColor()}} className={css.item} key={id}>
+            <span className={css.label}>{label}</span>
+            <span className={css.percentage}>{`${percentage}%`}</span>
           </li>
         )
       })

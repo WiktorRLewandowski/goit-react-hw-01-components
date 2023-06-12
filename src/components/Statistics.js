@@ -1,11 +1,12 @@
-import  PropTypes  from "prop-types";
+import PropTypes from "prop-types";
+import css from '../css/Statistics.module.css'
 
 export const Statistics = ({children}) => {
     return (
-        <section className="statistics">
-          <h2 className="title">Upload stats</h2>
+        <section className={css.statistics}>
+          <h2 className={css.title}>Upload stats</h2>
 
-          <ul className="stat-list">
+          <ul className={css.statList}>
             {children}
           </ul>
         </section>
